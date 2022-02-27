@@ -22,7 +22,7 @@ class Strategy():
         self.slippage = slippage
         self.mltp = mltp
 
-    def strat(self, data, symbols, parOne, parTwo, filters, filt):
+    def strat(self, data, symbols, parOne, filters, filt):
         pm = {'EntryDate': [], 'ExitDate': [], 'EntryPrice': [], 'ExitPrice': [], 'Pnl': [], 'Win': [], 'Loss': [],
               'Trade': [], 'HoldingDays': []}
 
@@ -183,7 +183,6 @@ def main():
     testing_method = 'wf1'
 
     firstPar = [0.1,0.2,0.3,0.4,0.5]
-    secondPar = [2,4,10,50]
 
     timeseries = Backtest(directory)
     traintest = TrainTest()
@@ -234,33 +233,6 @@ def main():
             test11 = executor.submit(walkforward.wf1, firstPar, secondPar, data, tr11, te11, Strategy(fees, slippage, multiplier))
             walkforward = WalkForward()
             test12 = executor.submit(walkforward.wf1, firstPar, secondPar, data, tr12, te12, Strategy(fees, slippage, multiplier))
-
-        elif testing_method == 'wf2':
-
-            walkforward = WalkForward()
-            test1 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr1, te1, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test2 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr2, te2, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test3 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr3, te3, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test4 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr4, te4, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test5 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr5, te5, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test6 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr6, te6, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test7 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr7, te7, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test8 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr8, te8, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test9 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr9, te9, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test10 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr10, te10, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test11 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr11, te11, Strategy(fees, slippage, multiplier))
-            walkforward = WalkForward()
-            test12 = executor.submit(walkforward.wf2, firstPar, secondPar, data, tr12, te12, Strategy(fees, slippage, multiplier))
 
         elif testing_method == 'wf1filters':
             walkforward = WalkForward()
