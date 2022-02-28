@@ -34,6 +34,6 @@ With the files above we can start back-testing and experimenting with different 
 
 I've put 2 examples of trading strategies with nice looking equity curve, one based on momentum (_101-cl-bb-momentum.py - Crude Oil) and the other based on mean-reversion (_101-zc-highestlowest-meanreversion.py - Corn).  
 
-To make the code faster, since there are multpiple iterations, I use also multiprocessing.
+To make the code faster, since there are multiple iterations, I also use multiprocessing.
 
 
