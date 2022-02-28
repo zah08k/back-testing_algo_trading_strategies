@@ -16,7 +16,7 @@ The core idea is to be able to back-test with the method of walk-forward optimiz
 
 etc.
 
-Considering the example above, at the end we would have 11-12 years out-of-sample results. With the 80/20 method, however, we would only have around 3-4 years out-of-sample results.
+Considering the example above, we would have 11-12 years out-of-sample results. With the 80/20 method, however, we would only have around 3-4 years out-of-sample results.
 
 The walk-forward method is more challenging to code, since there are multiple iterations going on. In this code I can choose to optimize 1 parameter and also find the best filters.
 
@@ -34,6 +34,6 @@ With the files above we can start back-testing and experimenting with different 
 
 I've put 2 examples of trading strategies with nice looking equity curve, one based on momentum (_101-cl-bb-momentum.py - Crude Oil) and the other based on mean-reversion (_101-zc-highestlowest-meanreversion.py - Corn).  
 
-To make the code faster, since there are multiple iterations, I also use multiprocessing.
+To make the code faster, I also use multiprocessing.
 
 
