@@ -1,7 +1,7 @@
 # back-testing_algo_trading_strategies
-I've created an environment where I can develop and back-test various algorithmic trading strategies with the method of walk-forward optimization
+I've created an environment where I can develop and back-test various algorithmic trading strategies with the method of walk-forward optimization.
 
-There are libraries in Python that can be used to back-test trading strategies. However, I wanted to create my own environment - for practice purposes, but also with the idea, that I can customize the strategies and the back-testing process.
+There are libraries in Python that can be used to back-test trading strategies. However, I wanted to create my own code - for practice purposes, but also with the idea, that I can customize the strategies and the back-testing process.
 
 The core idea is to be able to back-test with the method of walk-forward optimiziation. The most popular way of backtesting is dividing the sample data into 80% in-sample and 20% out-of-sample data. However, with the walk-forward method, we get more out-of-sample results. For example if we have data from 2006 until 2022, we can train, optimize and test our strategy the following way:
 
@@ -18,7 +18,7 @@ etc.
 
 Considering the example above, at the end we would have 11-12 years out-of-sample results. With the 80/20 method, however, we would only have around 3-4 years out-of-sample results.
 
-The walk-forward method is more challenging to code, since there are multiple iterations going on. In my code I can choose to optimize 1 parameter and find the best filters.
+The walk-forward method is more challenging to code, since there are multiple iterations going on. In this code I can choose to optimize 1 parameter and also find the best filters.
 
 backtest -> this is the walk-forward optimization code, but also the performance code, where we get the final results (PnL, Winrate, Max drawdown, max consecutive losses etc.)
 
