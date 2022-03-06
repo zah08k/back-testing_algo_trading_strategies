@@ -21,11 +21,9 @@ class Backtest:
                 df['Contract'] = self.symbol
                 df['openNextDay'] = df.open.shift(-1)
 
-
                 self.data[self.symbol] = df[-150:]
 
         return self.data
-
 
 class WalkForward:
     def __init__(self):
