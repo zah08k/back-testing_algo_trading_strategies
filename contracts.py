@@ -68,32 +68,59 @@ class StartEnd:  # Starting and ending date for every contract
         z = self.symbol[-2:]
         v = None
 
+        start = None
+        end = None
+
         if self.symbol[-3] == 'f':
             y = '10-16'
             v = '12-15'
             x = str(int('20' + x) - 1)[-2:]
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda x, v: '20' + x + '-' + v)(x, v)
+
         elif self.symbol[-3] == 'h':
             y = '12-16'
             v = '02-15'
             x = str(int('20' + x) - 1)[-2:]
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'k':
             y = '02-16'
             v = '04-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'n':
             y = '04-16'
             v = '06-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'q':
             y = '06-16'
             v = '07-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'u':
             y = '07-16'
             v = '08-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'x':
             y = '08-16'
             v = '10-15'
 
-        start = (lambda x, y: '20' + x + '-' + y)(x, y)
-        end = (lambda z, v: '20' + z + '-' + v)(z, v)
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
 
         return start, end
 
@@ -128,47 +155,94 @@ class StartEnd:  # Starting and ending date for every contract
         z = self.symbol[-2:]
         v = None
 
+        start = None
+        end = None
+
         if self.symbol[-3] == 'f':
             y = '11-16'
             v = '12-15'
             x = str(int('20' + x) - 1)[-2:]
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda x, v: '20' + x + '-' + v)(x, v)
+
         elif self.symbol[-3] == 'g':
             y = '12-16'
             v = '01-15'
             x = str(int('20' + x) - 1)[-2:]
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'h':
             y = '01-16'
             v = '02-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'j':
             y = '02-16'
             v = '03-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'k':
             y = '03-16'
             v = '04-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'm':
             y = '04-16'
             v = '05-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'n':
             y = '05-16'
             v = '06-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'q':
             y = '06-16'
             v = '07-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'u':
             y = '07-16'
             v = '08-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'v':
             y = '08-16'
             v = '09-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'x':
             y = '09-16'
             v = '10-15'
+
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
+
         elif self.symbol[-3] == 'z':
             y = '10-16'
             v = '11-15'
 
-        start = (lambda x, y: '20' + x + '-' + y)(x, y)
-        end = (lambda z, v: '20' + z + '-' + v)(z, v)
+            start = (lambda x, y: '20' + x + '-' + y)(x, y)
+            end = (lambda z, v: '20' + z + '-' + v)(z, v)
 
         return start, end
 
@@ -311,7 +385,7 @@ class TrainTest:  # Train and test arrangement
                 'zwh19', 'zwk19', 'zwn19', 'zwu19', 'zwz19',
                 'zwh20', 'zwk20', 'zwn20', 'zwu20', 'zwz20',
                 'zwh21', 'zwk21', 'zwn21', 'zwu21', 'zwz21']
-        te12 = ['zwh22']
+        te12 = ['zwh22', 'zwk22']
 
         return tr1, te1, tr2, te2, tr3, te3, tr4, te4, \
                tr5, te5, tr6, te6, tr7, te7, tr8, te8, \
@@ -400,7 +474,7 @@ class TrainTest:  # Train and test arrangement
                 'zch19', 'zck19', 'zcn19', 'zcu19', 'zcz19',
                 'zch20', 'zck20', 'zcn20', 'zcu20', 'zcz20',
                 'zch21', 'zck21', 'zcn21', 'zcu21', 'zcz21']
-        te12 = ['zch22']
+        te12 = ['zch22', 'zck22']
 
         return tr1, te1, tr2, te2, tr3, te3, tr4, te4, \
                tr5, te5, tr6, te6, tr7, te7, tr8, te8, \
@@ -489,7 +563,7 @@ class TrainTest:  # Train and test arrangement
                 'zsf19', 'zsh19', 'zsk19', 'zsn19', 'zsq19', 'zsu19', 'zsx19',
                 'zsf20', 'zsh20', 'zsk20', 'zsn20', 'zsq20', 'zsu20', 'zsx20',
                 'zsf21', 'zsh21', 'zsk21', 'zsn21', 'zsq21', 'zsu21', 'zsx21', ]
-        te12 = ['zsf22', 'zsh22']
+        te12 = ['zsf22', 'zsh22', 'zsk22']
 
         return tr1, te1, tr2, te2, tr3, te3, tr4, te4, \
                tr5, te5, tr6, te6, tr7, te7, tr8, te8, \
@@ -578,7 +652,7 @@ class TrainTest:  # Train and test arrangement
                 'ebmh19', 'ebmk19', 'ebmu19', 'ebmz19',
                 'ebmh20', 'ebmk20', 'ebmu20', 'ebmz20',
                 'ebmh21', 'ebmk21', 'ebmu21', 'ebmz21']
-        te12 = ['ebmh22']
+        te12 = ['ebmh22', 'ebmk22']
 
         return tr1, te1, tr2, te2, tr3, te3, tr4, te4, \
                tr5, te5, tr6, te6, tr7, te7, tr8, te8, \
@@ -667,7 +741,7 @@ class TrainTest:  # Train and test arrangement
                'clf19','clg19','clh19','clj19','clk19','clm19','cln19','clq19','clu19','clv19','clx19','clz19',
                'clf20','clg20','clh20','clj20','clk20','clm20','cln20','clq20','clu20','clv20','clx20','clz20',
                'clf21','clg21','clh21','clj21','clk21','clm21','cln21','clq21','clu21','clv21','clx21','clz21']
-        te12 = ['clf22','clg22','clh22']
+        te12 = ['clf22','clg22','clh22','clj22']
 
         return tr1, te1, tr2, te2, tr3, te3, tr4, te4, \
                tr5, te5, tr6, te6, tr7, te7, tr8, te8, \
@@ -756,7 +830,7 @@ class TrainTest:  # Train and test arrangement
                 'gcg19', 'gcj19', 'gcm19', 'gcq19', 'gcz19',
                 'gcg20', 'gcj20', 'gcm20', 'gcq20', 'gcz20',
                 'gcg21', 'gcj21', 'gcm21', 'gcq21', 'gcz21']
-        te12 = ['gcg22']
+        te12 = ['gcg22',]
 
         return tr1, te1, tr2, te2, tr3, te3, tr4, te4, \
                tr5, te5, tr6, te6, tr7, te7, tr8, te8, \
